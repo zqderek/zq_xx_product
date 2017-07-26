@@ -1,0 +1,83 @@
+{
+  "name": "zq_xx_project",
+  "version": "0.0.1",
+  "description": "a scaffold for SPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo '[TODO] no test' && exit 0",
+    "watch": "sh mv.sh;webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zqderek/zq_xx_product.git"
+  },
+  "keywords": [
+    "zhangqing"
+  ],
+  "author": "张庆",
+  "license": "MIT",
+  "dependencies": {
+    "highcharts-export-server": "^1.0.14",
+    "html-pdf": "^2.1.0",
+    "html-webpack-template-pug": "^1.1.1",
+    "iconv-lite": "^0.4.17",
+    "koa": "^2.0.0",
+    "koa-pug": "^3.0.0-1",
+    "koa-router": "^7.0.1",
+    "koa-send": "^3.2.0",
+    "lodash": "^4.17.4",
+    "pm2": "^2.0.16",
+    "pug": "^2.0.0-rc.1",
+    "vue": "^2.3.2",
+    "vue-clipboards": "^1.0.3",
+    "vue-cookie": "^1.1.4",
+    "vue-grid-layout": "^2.1.6",
+    "vue-resource": "^1.2.0",
+    "vue-router": "^2.0.1",
+    "vuex": "^2.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "babel-register": "^6.18.0",
+    "babel-runtime": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "css-sourcemaps-webpack-plugin": "^1.0.3",
+    "cssnano": "^3.10.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "happypack": "^4.0.0-beta.1",
+    "html-webpack-plugin": "^2.29.0",
+    "html-webpack-pug-plugin": "^0.2.0",
+    "node-sass": "^4.5.3",
+    "postcss-cssnext": "^3.0.0",
+    "postcss-define-property": "^0.5.0",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-scss": "^1.0.2",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.13.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "url-loader": "^0.5.8",
+    "vue-hot-reload-api": "^2.0.6",
+    "vue-html-loader": "^1.2.0",
+    "vue-loader": "^12.0.4",
+    "vue-style-loader": "^3.0.0",
+    "vue-template-compiler": "^2.3.2",
+    "vue-template-es2015-compiler": "^1.5.3",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/zqderek/zq_xx_product/issues"
+  },
+  "homepage": "https://github.com/zqderek/zq_xx_product#readme"
+}
