@@ -10,12 +10,19 @@ import AjaxVue from '../plugin/ajax.js';
 
 import State from '../store/global.js';
 
+import VTable from '../component/table/';
+import Dialog from '../component/dialog/dialog.js';
+
 Vue.use(VueRouter);
 Vue.use(VueCookie);
 Vue.use(VueSource);
+Vue.use(Dialog);
+Vue.use(VTable);
 import MainView from '../pageview/main.vue';
 import IndexView from '../pageview/no_login/index.vue';
 import LoginView from '../pageview/no_login/login.vue';
+
+
 Vue.config.devtools = true;
 Vue.http.options.emulateJSON = true;
 Vue.http.options.headers = {
