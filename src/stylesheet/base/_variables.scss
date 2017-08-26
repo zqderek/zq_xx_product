@@ -1,0 +1,50 @@
+/*
+ * 页面变量配置
+ */
+
+// 颜色设置
+// ============================================================================
+
+$primary-color: #6A70E4;
+$paper-color: #fff;
+$text-color: #777;
+$green-color: #65c178;
+$yellow-color: #ef9b6d;
+$red-color: #ef9b6d;
+$gray-color: #999;
+$white-color: #fff;
+$head-active-color: #5662da;
+$form-border-color:$gray-color;
+$link-color: $text-color;
+$hover-link-color: $primary-color;
+$primary-color-hover: #4D62D2;
+
+
+// 字体大小设置
+// =============================================
+$btn-primary:16px;
+$font-medium: 14px;
+$font-large: 16px;
+$font-normal: 12px;
+
+
+//字体重量设置
+//==============================================
+$index-form-width: 749px;
+$index-font-thin: 100;
+$index-font-light: 200;
+$index-font-media: 300;
+$index-font-regular: 400;
+
+// 字体设置
+// ============================================================================
+
+$text-font: 'PingFang SC','Helvetica Neue', Helvetica, STHeitiSC-Light,WOL_SB,'Segoe UI Semibold','Segoe UI',Tahoma, Helvetica, sans-serif;
+$heading-font: Helvetica,"Microsoft Yahei", STXihei, "Microsoft Jhenghei", "Microsoft Yahei", Simhei, Sans-Serif;
+
+
+// 布局设置
+// ============================================================================
+
+$min-window-width: 1200px;
+$nav-height: 40px;

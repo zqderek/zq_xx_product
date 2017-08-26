@@ -1,0 +1,64 @@
+/*
+ * 常用的mixin
+ */
+
+// 水平居中
+@mixin center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// 清除浮动
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//上三角
+@mixin up-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 6px 8px;
+    border-color: transparent transparent $white-color transparent;
+}
+//下三角
+@mixin down-triangle($color) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: $color transparent transparent transparent;
+}
+//垂直居中
+@mixin v-center{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+}
+//水平居中
+@mixin h-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+}
+//居中
+@mixin hv-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+//溢出...
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
