@@ -1,0 +1,125 @@
+var path = require("path");
+var extractSass = require("extract-text-webpack-plugin");
+//以下为postcss插件
+var CssSourcemapPlugin = require('css-sourcemaps-webpack-plugin');
+
+let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let isRelease = process.env.release ? true: false;
+
+var HappyPack = require('happypack');
+var happyThreadPool = HappyPack.ThreadPool({ size: require('os').cpus().length });
+
+module.exports = {
+    devtool: "source-map",
+    entry: {
+        styles: "./src/js/css-compile.js",
+        main: "./src/js/main.js"
+    },
+    output: {
+        publicPath: "/",
+        path: path.resolve(process.cwd(), "www/"),
+        filename: isRelease ? "static/js/[name].[hash].js" : "static/js/[name].js"
+    },
+    module: {
+        rules: [
+            {
+                test: /.scss$/,
+                use: extractSass.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true,
+                            plugins: (loader) => [
+                                require('autoprefixer')({browsers:["> 5%", "ie >= 9", "ie 9", "Firefox < 20"], remove: false})
+                            ]
+                        }
+                        
+                    }, {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }]
+                })
+            },
+            //('style-loader', 'css-loader!postcss-loader!sass-loader?sourceMap=true')
+            {
+                test: /\.vue$/,
+                use: [{
+                    loader: "vue-loader",
+                    options: {
+                        sourceMap: true,
+                        postcss: [require('autoprefixer')({browsers:["> 5%", "ie >= 9", "ie 9", "Firefox < 20"], remove: false})]
+                    }
+                }]
+            },
+            {
+                test: /\.pug$/,
+                use: ["pug-loader"]
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|www|tmp|software|doc|app)\//,
+                use: [{
+                    loader: path.resolve(__dirname, './node_modules', 'happypack/loader') + '?id=js'
+                }]
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            name: "./img/[name].[ext]"
+                        }
+                    }
+                ]
+            },
+        ]
+    },
+    plugins: [
+        new HappyPack({
+            id: 'js',
+            threadPool: happyThreadPool,
+            loaders: [{
+                path: 'babel-loader',
+                query: {
+                    cacheDirectory: '.webpack_cache',
+                    presets: [
+                        'es2015',
+                        'stage-3'
+                    ]
+                }
+            }]
+        }),
+
+        new extractSass(isRelease ? "static/css/[name].[hash].css": "static/css/[name].css"),
+        !isRelease ? new CssSourcemapPlugin(): function() {},
+        !isRelease ? function(){}: new UglifyJSPlugin(),
+        new HtmlWebpackPlugin({
+            // Required
+            title: 'xxx',
+            inject: true,
+            template: './src/index.ejs',
+            baseUrl: '/',
+            cache: false,
+
+            // Optional
+            chunks: ['styles', 'main'],
+            filename: 'index.html'
+        }),
+    ],
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.min.js',
+            'vue-grid-layout': 'vue-grid-layout/dist/vue-grid-layout.min.js',
+            'lodash': 'lodash/lodash.min.js',
+        }
+    }
+}

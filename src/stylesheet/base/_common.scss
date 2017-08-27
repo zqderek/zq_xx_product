@@ -1,0 +1,552 @@
+/*
+ * 页面可共用样式
+ */
+
+// 元素设置
+// ===========================================================================
+
+* {
+    box-sizing: inherit;
+}
+html,body {
+    height: 100%;
+}
+body {
+    min-width: $min-window-width;
+    font: normal normal 12px/1.6 $text-font;
+    background: $paper-color;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+    font-family: $heading-font;
+}
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+h3 {
+    font-size: 14px;
+}
+p {
+    margin-bottom: 10px;
+}
+em {
+    color: #e45f5f;
+}
+button {
+    border: none;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+// Badge
+// ===========================================================================
+
+.badge {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 2;
+    padding: 0 0.8em;
+    border-radius: 0.3em;
+    color: #fff;
+    background: $gray-color;
+}
+.badge-success, .badge-ok {
+    background: $green-color;
+}
+.badge-danger, .badge-error {
+    background: $red-color;
+}
+.badge-pending {
+    background: #aaa;
+}
+
+
+// 文字颜色
+// ===========================================================================
+
+.text-primary {
+    color: $primary-color;
+}
+.text-success, .text-ok, .text-done, .status-ok {
+    color: $green-color;
+}
+.text-error, .status-error {
+    color: $red-color;
+}
+.text-warning, .status-pending {
+    color: $yellow-color;
+}
+
+
+// 文字大小
+// ===========================================================================
+
+.font-large {
+    font-size: 117%;
+}
+.font-larger {
+    font-size: 133%;
+}
+
+
+// 工具类
+// ===========================================================================
+
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+.hide {
+    display: none;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+.clickable {
+    cursor: pointer;
+}
+.center {
+    text-align: center;
+}
+
+
+// 公共元素
+// ===========================================================================
+
+.global-warning-box {
+    background: $yellow-color;
+    color: #fff;
+    padding: 1em;
+    margin-top: -5px;
+    position: relative;
+}
+.fa {
+    margin-right: 0.3em;
+}
+.head-action {
+    @extend .clearfix;
+    margin: 1em 0;
+    .btn {
+        margin-right: 0;
+    }
+    .tips {
+        line-height: 2.8;
+        color: #bbb;
+        margin: 0;
+    }
+    a:not(.btn) {
+        color: $link-color;
+    }
+}
+
+// 标题
+// ===========================================================================
+.heading {
+    color: lighten($primary-color, 15);
+    h2 {
+        border-bottom: 1px solid #e2e2e2;
+        margin: 1em 0;
+        padding-bottom: 0.8em;
+    }
+    h3 {
+        margin: 1em 0;
+    }
+}
+
+// 删除提示语
+// ===========================================================================
+.del-confirm{
+    padding: 10px 20px;
+}
+.del-warn{
+    color: #aaa;
+    padding: 15px 10px 0 10px;
+}
+
+// 提示框
+// ===========================================================================
+.tip-box{
+    width: 700px;
+    padding: 1em 3em;
+    background-color: #ecf6fc;
+    border: 1px solid #b0d2f7;
+    margin: 1.5em 0;
+    color: #999;
+    p{
+        margin: 0;
+    }
+    .title{
+        font-size: 120%;
+        color: #333;
+    }
+}
+
+//横线
+// ===========================================================================
+.hr {
+    width: 100%;
+    border-bottom: 1px solid $form-border-color;
+    margin: 30px 0;
+}
+
+//icon
+//===========================================================================
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-drop-up {
+    background-image: url(../img/arr_up_blue.png);
+    background-size: 16px 16px;
+}
+
+.icon-drop-down {
+    background-image: url(../img/arr_down_blue.png);
+    background-size: 16px 16px;
+}
+
+.icon-search {
+    background-image: url(../img/search.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-search-active {
+    background-image: url(../img/search_active.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-search.svg {
+    background-image: url(../img/svg/search.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-search.svg:hover {
+    background-image: url(../img/svg/search-hover.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-select-add.svg {
+    background-image: url(../img/svg/select-add.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-select-add.svg:hover {
+    background-image: url(../img/svg/select-add-hover.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-select-uncheck.svg {
+    background-image: url(../img/svg/select-uncheck.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-select-uncheck.svg:hover {
+    background-image: url(../img/svg/select-uncheck-hover.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-clear {
+    background-image: url(../img/clear.png);
+    width: 10px;
+    height: 10px;
+}
+.icon-clear.svg {
+    background-image: url(../img/svg/close.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-clear.svg:hover{
+    background-image: url(../img/svg/close-hover.svg);
+    width: 16px;
+    height: 16px;
+}
+.icon-drop-right {
+    background-image: url(../img/arr_right_blue.png);
+    background-size: 16px 16px;
+    
+}
+.icon-drop-right-darker {
+    background-image: url(../img/arr_right_blue_darker.png);
+    background-size: 16px 16px;
+}
+
+.icon-table {
+    background-image: url(../img/ico-table.png);
+    width: 12px;
+    height: 10px;
+}
+
+.icon-list {
+    background-image: url(../img/ico-list.png);
+    width: 14px;
+    height: 10px;
+}
+
+.icon-visual {
+    background-image: url(../img/ico-visual.png);
+    width: 16px;
+    height: 12px;
+}
+
+.icon-add {
+    background-image: url(../img/ico_add.png);
+    width: 14px;
+    height: 14px;
+}
+
+.icon-list-menu {
+    background-image: url(../img/ico_list_menu.png);
+    width: 10px;
+    height: 10px;
+}
+
+/* .icon-list-menu-active {
+    background-image: url(../img/ico_list_menu_active.png);
+    width: 10px;
+    height: 10px;
+} */
+
+.icon-refresh {
+    background-image: url(../img/ico_refresh.png);
+    width: 13px;
+    height: 13px;
+}
+
+.icon-fullscreen {
+    background-image: url(../img/ico_fullscreen.png);
+    width: 11px;
+    height: 11px;
+}
+
+.icon-view {
+    background-image: url(../img/ico_view.png);
+}
+
+.icon-list-show {
+    background-image: url(../img/ico-list-bold.png);
+    width: 14px;
+    height: 10px;
+}
+
+.icon-list-show:hover {
+    background-image: url(../img/ico-list-bold-hover.png);
+    width: 14px;
+    height: 10px;
+}
+
+.icon-tip {
+    background-image: url(../img/ico_tip.png);
+    width: 12px;
+    height: 12px;
+}
+
+.icon-ellipsis-gray {
+    background-image: url(../img/ico_ellipsis_gray.png);
+    width: 10px;
+    height: 3px;
+}
+
+.icon-set {
+    background-image: url(../img/ico_set.png);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-share {
+    background-image: url(../img/ico_share.png);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-play {
+    background-image: url(../img/ico-play.png);
+    width: 12px;
+    height: 16px;
+}
+.icon-pause {
+    background-image: url(../img/ico-pause.png);
+    width: 12px;
+    height: 16px;
+}
+
+.icon-arr-left {
+    background-image: url(../img/ico-triangle-left.png);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-arr-right {
+    background-image: url(../img/ico-triangle-right.png);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-zoomout {
+    background-image: url(../img/ico-zoomout.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-export-data {
+    background-image: url(../img/icon-export-data.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-export-pic {
+    background-image: url(../img/icon-export-pic.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-refresh-full {
+    background-image: url(../img/icon-refresh-full.png);
+    width: 16px;
+    height: 16px;
+}
+.icon-arr-left-fff {
+    background-image: url(../img/ico-arr-left-fff.png);
+    width: 13px;
+    height: 10px;
+}
+
+.icon-info {
+    background-image: url(../img/ico-info.png);
+    width: 12px;
+    height: 12px;
+}
+
+.icon-plus {
+    background-image: url(../img/ico_plus.png);
+}
+
+.icon-remove {
+    background-image: url(../img/ico_remove.png);
+    width: 14px;
+    height: 14px;
+}
+
+.icon-hover:hover,.icon-hover.active,  {
+    .icon-plus {
+        background-image: url(../img/ico_plus_hover.png);
+    }
+
+    .icon-remove {
+        background-image: url(../img/ico_remove_hover.png);
+    }
+}
+
+.__pie_chart_title_wrap__ {
+    text-align: center;
+}
+
+.__pie_chart_title_name__ {
+    font-size: 14px;
+    line-height: 16px;
+    color: #5182E4;
+}
+.__pie_chart_title_value__ {
+    font-size: 30px;
+    line-height: 32px;
+    color: #666;
+}
+
+.icon-success {
+    background-image: url(../img/ico_success.png);
+    width: 57px;
+    height: 57px;
+}
+
+.icon-failure {
+    background-image: url(../img/ico_failure.png);
+    width: 57px;
+    height: 57px;
+}
+
+.icon-warn {
+    background: url(../img/warn.png) no-repeat center;
+    height: 60px;
+    width: 60px;
+}
+
+.icon-ok {
+    background: url(../img/ico_success.png) no-repeat center;
+    height: 60px;
+    width: 60px;
+}
+
+.icon-error {
+    background: url(../img/ico_failure.png) no-repeat center;
+    height: 60px;
+    width: 60px;
+}
+
+.icon-folder-close {
+    background: url(../img/ico_folder_close.png);
+}
+
+.icon-folder-open {
+    background: url(../img/ico_folder_open.png);
+}
+
+.icon-folder-close.svg {
+    background: url(../img/svg/ico_folder_close.svg);
+}
+
+.icon-folder-open.svg {
+    background: url(../img/svg/ico_folder_open.svg);
+}
+
+.icon-dashboard-self {
+    background: url(../img/ico_dashboard_self.png);
+}
+.icon-arr-left {
+    background: url(../img/ico-arr-l.png) no-repeat center;
+}
+.icon-arr-right {
+    background: url(../img/ico-arr-r.png) no-repeat center;
+}
+.icon-delete {
+    background: url(../img/delete.png) no-repeat center; 
+}
+.icon-delete-disabled {
+    background: url(../img/delete_disabled.png) no-repeat center; 
+}
+
+.error-msg {
+    color: red;
+}
+
+.__cov-progress {
+    &.static {
+        position: static;
+    }
+    &.relative {
+        position: relative;
+    }
+    &.absolute {
+        position: absolute;
+    }
+}
+
+.transform180 {
+    transform: rotate(-180deg);
+    transition: transform .2s ease;
+}
